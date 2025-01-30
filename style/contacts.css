@@ -1,15 +1,15 @@
-#contFactDetails{
+#contactDetails {
     display: flex;
     height: 100%;
 }
 
-.contactsFixed{
+.contactsFixed {
     position: fixed;
     top: 96px;
     left: 232px;
 }
 
-#btn_addNewContact{
+#btn_addNewContact {
     background-color: rgb(42, 54, 71);
     height: 52px;
     width: 90%;
@@ -21,14 +21,14 @@
     font-weight: 600;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
-#btn_addNewContact img{
+#btn_addNewContact img {
     padding-left: 15px;
 }
 
-#btn_addNewContact:hover{
+#btn_addNewContact:hover {
     box-shadow: 0 5px 5px rgb(184, 183, 183);
     background-color: #29abe2;
     border: 1px solid rgb(41, 171, 226);
@@ -36,7 +36,7 @@
     transition: all 0.3s ease;
 }
 
-#contactCard{
+#contactCard {
     height: 364px;
     display: flex;
     flex-direction: column;
@@ -45,20 +45,20 @@
     transition: transform 0.6s ease-in-out;
 }
 
-#seperator{
+#seperator {
     height: 1px;
     width: 100%;
     background-color: lightgray;
 }
 
-#contactCardHeader{
+#contactCardHeader {
     height: 120px;
     width: 100%;
     display: flex;
     align-items: center;
 }
 
-.userInitials{
+.userInitials {
     height: 120px;
     min-width: 120px;
     color: white;
@@ -72,33 +72,33 @@
     border: 3px solid white;
 }
 
-.no-margin{
+.no-margin {
     margin: 0;
 }
 
-#userName{
+#userName {
     font-size: 47px;
 }
 
-.action{
+.action {
     color: rgb(42, 54, 71);
     display: flex;
     padding-top: 8px;
 }
 
-#edit{
+#edit {
     display: flex;
     align-items: center;
     gap: 7px;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
-#edit:hover{
+#edit:hover {
     filter: invert(77%) sepia(31%) saturate(6859%) hue-rotate(165deg) brightness(91%) contrast(95%);
     font-weight: 700;
 }
 
-#delete{
+#delete {
     display: flex;
     align-items: center;
     gap: 7px;
@@ -106,40 +106,43 @@
     cursor: pointer;
 }
 
-#delete:hover{
+#delete:hover {
     filter: invert(77%) sepia(31%) saturate(6859%) hue-rotate(165deg) brightness(91%) contrast(95%);
     font-weight: 700;
 }
 
-#userEdit{
+#userEdit {
     display: flex;
-    color:rgb(60, 72, 87);
+    color: rgb(60, 72, 87);
     font-weight: 600;
     padding-top: 5px;
 }
 
-#contactText{
+#contactText {
     font-size: 20px;
 }
 
-#contactCardEmail, #contactCardPhone, #contactText{
+#contactCardEmail,
+#contactCardPhone,
+#contactText {
     width: 100%;
     height: 70px;
 }
 
-#contactPhoneNr, #contactEmailAdr{
+#contactPhoneNr,
+#contactEmailAdr {
     margin-top: 7px;
 }
 
-#contactEmailAdr a{
+#contactEmailAdr a {
     color: rgb(0, 124, 238);
 }
 
-#contactCardUserInfo p{
+#contactCardUserInfo p {
     font-weight: 700;
 }
 
-#contactDetailsHeader{
+#contactDetailsHeader {
     display: flex;
     flex-direction: row;
     height: 80px;
@@ -147,47 +150,47 @@
     margin-top: 102px;
 }
 
-#cardTop{
+#cardTop {
     width: 100%;
     height: 120px;
 }
 
-#cardBottom{
+#cardBottom {
     width: 100%;
     height: auto;
     flex-grow: 1;
 }
 
-.vl{
+.vl {
     border-left: 4px solid rgb(41, 171, 226);
     height: 60px;
 }
 
-.blueLine{
+.blueLine {
     width: 3px;
     height: 76px;
     background-color: rgb(41, 171, 226);
 }
 
-#spanContacts{
+#spanContacts {
     font-size: 60px;
     font-weight: 700;
     margin-right: 32px;
 }
 
-#spanBetter{
+#spanBetter {
     font-size: 27px;
     margin-left: 32px;
 }
 
-#newContactForm{
+#newContactForm {
     height: 590px;
     width: 1210px;
     background-color: rgb(227, 223, 223);
     border-radius: 12px;
 }
 
-.singleEntry{
+.singleEntry {
     height: 78px;
     margin-top: 5px;
     display: flex;
@@ -196,12 +199,12 @@
     padding-left: 2px;
 }
 
-.singleEntry:hover{
+.singleEntry:hover {
     background-color: rgb(246, 247, 248);
     cursor: pointer;
 }
 
-.userInitialsOverview{
+.userInitialsOverview {
     height: 42px;
     width: 42px;
     border-radius: 50%;
@@ -213,12 +216,12 @@
     border: 2px solid white;
 }
 
-#entryInfoName{
+#entryInfoName {
     font-size: 20px;
     font-weight: 400;
 }
 
-#entryInfoMail{
+#entryInfoMail {
     font-size: 16px;
     font-weight: 400;
     color: rgb(0, 124, 238);
@@ -233,12 +236,12 @@
     color: #333;
 }
 
-.dialogDesktop{
+.dialogDesktop {
     width: 1200px;
     max-width: 95%;
 }
 
-#form{
+#form {
     display: flex;
     height: auto;
     background-color: white;
@@ -246,23 +249,23 @@
     padding: 0;
 }
 
-#addContactHeader{
+#addContactHeader {
     width: 80%;
 }
 
-#addContactHeader p{
+#addContactHeader p {
     color: white;
     font-weight: bold;
     font-size: 61px;
     width: 100%;
 }
 
-#addContactHeader img{
+#addContactHeader img {
     height: 66px;
     width: 55px;
 }
 
-#addContactHeader span{
+#addContactHeader span {
     color: white;
     font-weight: 300;
     font-size: 28px;
@@ -270,7 +273,7 @@
     display: inline-block;
 }
 
-#circle{
+#circle {
     height: 120px;
     width: 120px;
     font-size: 47px;
@@ -284,25 +287,25 @@
     justify-content: center;
 }
 
-#circle img{
+#circle img {
     height: 42px;
     width: 42px;
 }
 
-#newContactDivider{
+#newContactDivider {
     height: 3px;
     width: 100px;
     margin-top: 13px;
-    background-color:rgb(41, 171, 226)
+    background-color: rgb(41, 171, 226)
 }
 
-#newUserForm{
+#newUserForm {
     height: 215px;
     display: flex;
     flex-direction: column;
 }
 
-#newUserForm input{
+#newUserForm input {
     height: 46px;
     border-radius: 12px;
     border: 1px solid #8080804a;
@@ -310,10 +313,11 @@
     padding-left: 28px;
 }
 
-#newUserForm img{
+#newUserForm img {
     height: 24px;
     width: 24px;
 }
+
 .inputField {
     position: relative;
     padding: 0;
@@ -325,17 +329,17 @@
     right: 16px;
 }
 
-.inputField input{
+.inputField input {
     width: 422px;
 }
 
-#closingImg:hover{
+#closingImg:hover {
     cursor: pointer;
     background-color: rgb(230, 223, 223);
     border-radius: 90%;
 }
 
-.chosen{
+.chosen {
     background-color: rgb(42, 54, 71);
     color: white;
 }
@@ -348,10 +352,10 @@
     background: #2A3647;
 }
 
-.landscape-message{
+.landscape-message {
     height: 100vh;
 }
 
-#blueLineMobile{
+#blueLineMobile {
     display: none;
 }

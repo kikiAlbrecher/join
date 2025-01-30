@@ -1,4 +1,4 @@
-.add-task-assFigned-to-input-field {
+.add-task-assigned-to-input-field {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -146,7 +146,7 @@
 .created-subtasks-container::-webkit-scrollbar-track {
     background: #F6F7F8;
 }
-  
+
 .subtask-list {
     display: flex;
     justify-content: space-between;
@@ -156,16 +156,16 @@
     gap: 4px;
     padding: 4px 16px 4px 16px;
 }
-  
+
 .subtask-list::before {
     content: '\2022';
 }
-  
+
 .subtask-list:hover {
     background-color: #eeeeee;
     border-radius: 10px;
 }
-  
+
 .subtask-list input {
     background-color: transparent;
     border: none;
@@ -176,7 +176,7 @@
     margin: 0;
     font-size: 16px;
 }
-  
+
 .edit-subtask-list {
     display: flex;
     justify-content: space-between;
@@ -189,7 +189,7 @@
     border-bottom: 1px solid #29abe2;
     border-radius: 0px;
 }
-  
+
 .edit-subtask-list input {
     background-color: transparent;
     border: none;
@@ -200,7 +200,7 @@
     margin: 0;
     font-size: 16px;
 }
-  
+
 .edit-images {
     display: none;
     flex-direction: row;
@@ -228,7 +228,7 @@
     margin: 0px 4px;
     background-color: #d1d1d1;
 }
-  
+
 .subtask-list:hover .edit-images {
     display: flex;
     gap: 4px;

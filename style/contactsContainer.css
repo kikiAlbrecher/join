@@ -1,16 +1,16 @@
-#contacFtDetailsContainer{
+#contactDetailsContainer {
     width: 75%;
     display: flex;
     flex-direction: column;
     margin-left: 64px;
 }
 
-#seperatorContainer{
+#seperatorContainer {
     display: flex;
     justify-content: center;
 }
 
-#addContactHeaderContainer{
+#addContactHeaderContainer {
     width: 467px;
     min-width: 350px;
     background-color: rgb(42, 54, 71);
@@ -21,14 +21,14 @@
     justify-content: center;
 }
 
-#newContactFormContainer{
+#newContactFormContainer {
     display: flex;
     flex-direction: column;
     margin: 16px 40px 16px 0;
     justify-content: center;
 }
 
-#formContainer{
+#formContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -42,13 +42,13 @@
     max-width: 120px;
 }
 
-#btnContainer{
+#btnContainer {
     display: flex;
     gap: 20px;
     padding-top: 31px;
 }
 
-#btnContainer div{
+#btnContainer div {
     height: 56px;
     width: auto;
     display: flex;
@@ -57,17 +57,17 @@
     cursor: pointer;
 }
 
-#cancelImgContainer{
+#cancelImgContainer {
     justify-content: end;
     display: flex;
     padding-bottom: 82px;
 }
 
-#addUserFormContainer .inputField{
+#addUserFormContainer .inputField {
     height: 70px;
-} 
+}
 
-#wrapperContacts{
+#wrapperContacts {
     width: 456px;
     background-color: rgb(255, 255, 255);
     box-shadow: 5px 5px 5px rgb(184, 183, 183);
@@ -78,7 +78,7 @@
     position: relative;
 }
 
-#contactsOverview{
+#contactsOverview {
     margin-top: 20px;
     max-height: calc(100vh - 200px);
     overflow-y: auto;
@@ -87,7 +87,7 @@
     padding: 0 20px 0 20px;
 }
 
-#newContactContent{
+#newContactContent {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -112,15 +112,15 @@ Dialog.dialogNorm.open {
     transform: translate(-50%, -50%);
 }
 
-.infoboxClosed{
+.infoboxClosed {
     transform: translateX(100vw);
 }
 
-dialog.contactDialog{
+dialog.contactDialog {
     width: 396px;
 }
 
-#statusAlert{
+#statusAlert {
     height: 74px;
     width: 326px;
     z-index: 999;
@@ -138,11 +138,11 @@ dialog.contactDialog{
     transition: top 0.6s ease-in-out;
 }
 
-#statusAlert.open{
+#statusAlert.open {
     top: 110px;
 }
 
-#contactDetailsCard{
+#contactDetailsCard {
     height: 364px;
     width: 461px;
     background-color: grey;
