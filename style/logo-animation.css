@@ -1,0 +1,178 @@
+.logo-animation-div {
+    z-index: 2000;
+    position: relative;
+    height: 100vh;
+    opacity: 1;
+    background: #F6F7F8;
+}
+
+.logo-animation {
+    position: absolute;
+    z-index: 3000;
+    animation: moveLogo 0.7s ease-in-out forwards;
+}
+
+@keyframes moveLogo {
+    0% {
+        top: calc(50vh - 334px/2);
+        left: calc(50% - 274px/2);
+        height: 334px;
+        width: 274px;
+    }
+
+    30% {
+        top: calc(50vh - 334px/2);
+        left: calc(50% - 274px/2);
+        height: 334px;
+        width: 274px;
+    }
+
+    100% {
+        top: 80px;
+        left: 77px;
+        height: 121.97px;
+        width: 100.03px;
+    }
+}
+
+.logo-animation-mobile {
+    display: none;
+}
+
+.content-add {
+    animation: fadeContentIn 0.7s ease-in forwards;
+}
+
+@keyframes fadeContentIn {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1288px) {
+    @keyframes moveLogo {
+        0% {
+            top: calc(50vh - 334px/2);
+            left: calc(50% - 274px/2);
+            height: 334px;
+            width: 274px;
+        }
+
+        30% {
+            top: calc(50vh - 334px/2);
+            left: calc(50% - 274px/2);
+            height: 334px;
+            width: 274px;
+        }
+
+        100% {
+            top: 60px;
+            left: 77px;
+            height: 121.97px;
+            width: 100.03px;
+        }
+    }
+}
+
+@media (max-width: 816px) {
+    .logo-animation-div {
+        animation: backgroundChange 1s ease-in-out;
+    }
+
+    @keyframes backgroundChange {
+        0% {
+            background: #2A3647;
+        }
+
+        20% {
+            background: #2A3647;
+        }
+
+        100% {
+            background: #F6F7F8;
+        }
+    }
+
+    .logo-animation {
+        display: none;
+    }
+
+    .logo-animation-mobile {
+        display: flex;
+        animation: moveLogoMobile 1s ease-in-out forwards;
+    }
+
+    @keyframes moveLogoMobile {
+        0% {
+            top: calc(50vh - 121.97px/2);
+            left: calc(50% - 100.03px/2);
+            height: 121.97px;
+            width: 100.03px;
+        }
+
+        20% {
+            top: calc(50vh - 121.97px/2);
+            left: calc(50% - 100.03px/2);
+            height: 121.97px;
+            width: 100.03px;
+        }
+
+        100% {
+            top: 37px;
+            left: 38px;
+            height: 78.03px;
+            width: 64px;
+        }
+    }
+
+    .content-add {
+        animation: fadeContentInMobile 1s ease-in forwards;
+    }
+
+    @keyframes fadeContentInMobile {
+        0% {
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 376px) {
+    @keyframes moveLogoMobile {
+        0% {
+            top: calc(50vh - 121.97px/2);
+            left: calc(50% - 100.03px/2);
+            height: 121.97px;
+            width: 100.03px;
+        }
+
+        20% {
+            top: calc(50vh - 121.97px/2);
+            left: calc(50% - 100.03px/2);
+            height: 121.97px;
+            width: 100.03px;
+        }
+
+        100% {
+            top: 16px;
+            left: 32px;
+            height: 78.03px;
+            width: 64px;
+        }
+    }
+}

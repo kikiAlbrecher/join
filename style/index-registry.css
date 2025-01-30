@@ -1,0 +1,396 @@
+.content-add {
+    flex-direction: column;
+}
+
+.login-headline {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 80px 77px 0 77px;
+}
+
+.login-headline-reset {
+    justify-content: flex-start;
+}
+
+.join-logo {
+    width: 100.03px;
+    height: 121.97px;
+}
+
+.registry-link {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 35px;
+    padding-bottom: 87px;
+    transform: translateY(-24px);
+}
+
+.registry-link-mobile {
+    display: none;
+}
+
+.user-question {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.btn-fontsize {
+    font-size: 16px;
+    line-height: 19.2px;
+}
+
+.btn-sign-up {
+    padding: 15px 16px;
+    border-radius: 8px;
+}
+
+.form-position {
+    min-height: calc(100vh - 216.2px - 107.2px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-form-position {
+    min-height: calc(100vh - 202px - 107.16px);
+}
+
+.form {
+    background-color: #FFFFFF;
+    width: 652px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: unset;
+    border-radius: 30px;
+    padding: 48px 115px;
+    box-shadow: 0 0 14px 3px rgba(0, 0, 0, 0.1);
+    margin: 16px 0;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.registration-form {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+    padding: 42px 88px 42px 43px;
+    width: 598px;
+}
+
+.password-reset-form {
+    gap: 32px;
+}
+
+.reset-headline {
+    flex-direction: row;
+    align-items: center;
+    transform: translateX(-22.5px);
+}
+
+.return-btn {
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 6.5px;
+    margin-top: 14px;
+}
+
+.return-btn:hover {
+    background-color: #F6F7F8;
+    box-shadow: none;
+}
+
+.return-btn img {
+    color: #26ABE2;
+    height: 32px;
+    aspect-ratio: 1 / 1;
+}
+
+.return-btn-registry {
+    display: none;
+}
+
+.return-btn-reset {
+    z-index: 10;
+    transform: translateX(-128px);
+}
+
+.form-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.main-form {
+    flex-direction: column;
+    gap: 32px;
+}
+
+.form-headline {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.h1-underline {
+    border-bottom: solid 3px #29ABE2;
+    width: 150px;
+    padding-bottom: 16px;
+}
+
+.h1-underline-reset {
+    width: 104px;
+}
+
+.form-input-fields {
+    display: flex;
+    flex-direction: column;
+    width: 422px;
+    gap: 32px;
+}
+
+.registration-fields {
+    gap: 24px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px 21px;
+    line-height: 24px;
+    border: 1px solid #D1D1D1;
+}
+
+.input-field input {
+    width: 100%;
+    border: unset;
+    padding: 0;
+}
+
+.input-field img {
+    position: absolute;
+    right: 21px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 24px;
+    aspect-ratio: 1 / 1;
+}
+
+.msg-box {
+    color: #FF8190;
+    padding-top: 8px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.4px;
+}
+
+.red-border {
+    border-color: #FF001F;
+}
+
+.red-border-registry {
+    border: 1px solid #FF001F;
+    border-radius: 8px;
+    padding: 1px;
+}
+
+.password-msg {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.conditional-elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    width: 100%;
+    gap: 32px;
+}
+
+.check-item {
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+}
+
+.customized-checkbox-container {
+    position: relative;
+    display: inline;
+}
+
+input[type="checkbox"] {
+    height: 24px;
+    aspect-ratio: 1 / 1;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 84px;
+    cursor: pointer;
+}
+
+.checkbox-img {
+    height: 24px;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    top: -1px;
+    left: 80px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.invisible-checkbox {
+    position: absolute;
+    top: -2px;
+    left: -28px;
+}
+
+.remember-checkbox-img {
+    top: -2px;
+    left: -28px;
+}
+
+.additional-links {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #29ABE2;
+    padding: 0;
+}
+
+.additional-links:hover {
+    text-decoration: underline;
+}
+
+.remember-text {
+    color: #000000;
+}
+
+.remember-text:hover {
+    text-decoration: none;
+}
+
+.accept-text {
+    color: #A8A8A8;
+}
+
+.accept-text:hover {
+    text-decoration: none;
+}
+
+.btn-variant {
+    padding: 15px 24px;
+    border-radius: 8px;
+}
+
+.btn-forgotten-password {
+    background-color: #FFFFFF;
+}
+
+.btn-forgotten-password:hover {
+    box-shadow: none;
+}
+
+.login-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+.centered-position {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    padding: 32px 77px 40px 77px;
+}
+
+.centered-position-without-padding {
+    padding: 0;
+}
+
+.footer-links {
+    color: #A8A8A8;
+    font-size: 16px;
+    line-height: 19.2px;
+    font-weight: 400;
+    padding: 8px;
+}
+
+.footer-links:hover {
+    color: #26ace3;
+    font-weight: 700;
+}
+
+.grey-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: rgba(191, 191, 191, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.btn-success {
+    padding: 25px;
+    border-radius: 20px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    box-shadow: 0 0 4 rgba(0, 0, 0, 0.2);
+}
+
+.overlay-message {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    animation: slideInFromBottom 0.4s ease-in-out forwards;
+    position: relative;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100vh);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+body.overlay-active {
+    overflow: hidden;
+}

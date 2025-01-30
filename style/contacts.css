@@ -1,0 +1,357 @@
+#contactDetails{
+    display: flex;
+    height: 100%;
+}
+
+.contactsFixed{
+    position: fixed;
+    top: 96px;
+    left: 232px;
+}
+
+#btn_addNewContact{
+    background-color: rgb(42, 54, 71);
+    height: 52px;
+    width: 90%;
+    border-radius: 12px;
+    border: 1px solid rgb(42, 54, 71);
+    color: white;
+    font-size: 24px;
+    margin-top: 21px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#btn_addNewContact img{
+    padding-left: 15px;
+}
+
+#btn_addNewContact:hover{
+    box-shadow: 0 5px 5px rgb(184, 183, 183);
+    background-color: #29abe2;
+    border: 1px solid rgb(41, 171, 226);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#contactCard{
+    height: 364px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 34px;
+    transition: transform 0.6s ease-in-out;
+}
+
+#seperator{
+    height: 1px;
+    width: 100%;
+    background-color: lightgray;
+}
+
+#contactCardHeader{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.userInitials{
+    height: 120px;
+    min-width: 120px;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 48px;
+    font-size: 47px;
+    box-shadow: 0px 0px 4px grey;
+    border: 3px solid white;
+}
+
+.no-margin{
+    margin: 0;
+}
+
+#userName{
+    font-size: 47px;
+}
+
+.action{
+    color: rgb(42, 54, 71);
+    display: flex;
+    padding-top: 8px;
+}
+
+#edit{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;    
+}
+
+#edit:hover{
+    filter: invert(77%) sepia(31%) saturate(6859%) hue-rotate(165deg) brightness(91%) contrast(95%);
+    font-weight: 700;
+}
+
+#delete{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+#delete:hover{
+    filter: invert(77%) sepia(31%) saturate(6859%) hue-rotate(165deg) brightness(91%) contrast(95%);
+    font-weight: 700;
+}
+
+#userEdit{
+    display: flex;
+    color:rgb(60, 72, 87);
+    font-weight: 600;
+    padding-top: 5px;
+}
+
+#contactText{
+    font-size: 20px;
+}
+
+#contactCardEmail, #contactCardPhone, #contactText{
+    width: 100%;
+    height: 70px;
+}
+
+#contactPhoneNr, #contactEmailAdr{
+    margin-top: 7px;
+}
+
+#contactEmailAdr a{
+    color: rgb(0, 124, 238);
+}
+
+#contactCardUserInfo p{
+    font-weight: 700;
+}
+
+#contactDetailsHeader{
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    align-items: center;
+    margin-top: 102px;
+}
+
+#cardTop{
+    width: 100%;
+    height: 120px;
+}
+
+#cardBottom{
+    width: 100%;
+    height: auto;
+    flex-grow: 1;
+}
+
+.vl{
+    border-left: 4px solid rgb(41, 171, 226);
+    height: 60px;
+}
+
+.blueLine{
+    width: 3px;
+    height: 76px;
+    background-color: rgb(41, 171, 226);
+}
+
+#spanContacts{
+    font-size: 60px;
+    font-weight: 700;
+    margin-right: 32px;
+}
+
+#spanBetter{
+    font-size: 27px;
+    margin-left: 32px;
+}
+
+#newContactForm{
+    height: 590px;
+    width: 1210px;
+    background-color: rgb(227, 223, 223);
+    border-radius: 12px;
+}
+
+.singleEntry{
+    height: 78px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    padding-left: 2px;
+}
+
+.singleEntry:hover{
+    background-color: rgb(246, 247, 248);
+    cursor: pointer;
+}
+
+.userInitialsOverview{
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 25px 0 12px;
+    border: 2px solid white;
+}
+
+#entryInfoName{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#entryInfoMail{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(0, 124, 238);
+}
+
+.letterGroup {
+    width: 42px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 16px 0 8px 15px;
+    color: #333;
+}
+
+.dialogDesktop{
+    width: 1200px;
+    max-width: 95%;
+}
+
+#form{
+    display: flex;
+    height: auto;
+    background-color: white;
+    border-radius: 24px;
+    padding: 0;
+}
+
+#addContactHeader{
+    width: 80%;
+}
+
+#addContactHeader p{
+    color: white;
+    font-weight: bold;
+    font-size: 61px;
+    width: 100%;
+}
+
+#addContactHeader img{
+    height: 66px;
+    width: 55px;
+}
+
+#addContactHeader span{
+    color: white;
+    font-weight: 300;
+    font-size: 28px;
+    width: 373px;
+    display: inline-block;
+}
+
+#circle{
+    height: 120px;
+    width: 120px;
+    font-size: 47px;
+    color: white;
+    background-color: lightgrey;
+    border-radius: 90%;
+    border: 4px solid white;
+    box-shadow: 0 0 3px rgb(216, 214, 214);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#circle img{
+    height: 42px;
+    width: 42px;
+}
+
+#newContactDivider{
+    height: 3px;
+    width: 100px;
+    margin-top: 13px;
+    background-color:rgb(41, 171, 226)
+}
+
+#newUserForm{
+    height: 215px;
+    display: flex;
+    flex-direction: column;
+}
+
+#newUserForm input{
+    height: 46px;
+    border-radius: 12px;
+    border: 1px solid #8080804a;
+    font-size: 18px;
+    padding-left: 28px;
+}
+
+#newUserForm img{
+    height: 24px;
+    width: 24px;
+}
+.inputField {
+    position: relative;
+    padding: 0;
+}
+
+.inputField img {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+}
+
+.inputField input{
+    width: 422px;
+}
+
+#closingImg:hover{
+    cursor: pointer;
+    background-color: rgb(230, 223, 223);
+    border-radius: 90%;
+}
+
+.chosen{
+    background-color: rgb(42, 54, 71);
+    color: white;
+}
+
+.chosen:hover {
+    cursor: default;
+}
+
+.singleEntry.chosen:hover {
+    background: #2A3647;
+}
+
+.landscape-message{
+    height: 100vh;
+}
+
+#blueLineMobile{
+    display: none;
+}

@@ -1,0 +1,156 @@
+.task-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 252px;
+    width: 252px;
+    padding: 16px;
+    background-color: white;
+    border-radius: 24px;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.task-card:hover {
+    cursor: pointer;
+    rotate: 3deg;
+}
+
+.task-card.dragging {
+    transform: rotate(3deg);
+    transition: transform 0.2s ease;
+} 
+
+.task-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-card-menu {
+    display: none;
+    padding-top: 8px;
+}
+
+.task-card-menu img {
+    width: 32px;
+    height: 32px;
+}
+
+.task-card-menu-pop-up {
+    display: none;
+    position: absolute;
+    top: 51px;
+    right: 30px;
+    background-color: #2A3647;
+    color: white;
+    flex-direction: column;
+    gap: 16px;
+    padding: 15px;
+    border-top-left-radius: 24%;
+    border-bottom-right-radius: 24%;
+    width: 150px;
+    z-index: 2;
+}
+
+.task-card-menu-pop-up p:hover{
+    cursor: pointer;
+    color: #29abe2;
+}
+
+.task-category {
+    display: flex;
+}
+
+.task-category p {
+    color: white;
+    border-radius: 8px;
+    padding: 4px 16px;
+}
+
+.task-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.task-title {
+    color: #2A3647;
+    font-weight: 700;
+}
+
+.task-description {
+    color: #A8A8A8;
+}
+
+.taskcard-subtask {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-progress-bar-container {
+    width: 128px;
+    height: 8px;
+    background-color: #F4F4F4;
+    border-radius: 8px;
+}
+
+.task-progress-bar {
+    width: 0%;
+    height: 8px;
+    background-color: #29abe2;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.taskcard-subtask p {
+    font-size: 12px;
+}
+
+.task-user-and-priority {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-assigned-to {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.task-user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+    border: 1px solid #FFFFFF;
+    border-radius: 45px;
+
+    color: white;
+    font-size: 12px;
+    position: relative;
+    margin-left: -8px;
+    z-index: 1;
+}
+
+.more-users {
+    background-color: gray
+}
+
+@media (max-width: 1065px) {
+    .task-card-menu {
+        display: block;
+    }
+}
+
+
+
+
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+    <script src="./js/include.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/logoAnimation.js"></script>
+    <script src="./js/initPortraitMode.js"></script>
+    <script src="./js/register.js"></script>
+    <script src="./js/loginRegisterTemplate.js"></script>
+    <script src="./js/rememberMe.js"></script>
+    <script src="./js/forgottenPassword.js"></script>
+    <script src="./js/board.js"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/standard.css">
+    <link rel="stylesheet" href="./style/board.css">
+    <link rel="stylesheet" href="./style/logo-animation.css">
+    <link rel="stylesheet" href="./style/index-registry.css">
+    <link rel="stylesheet" href="./style/index-registry-responsive.css">
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="icon" href="./assets/img/join_logo_login.png">
+</head>
+
+<body class="content-centering" onload="initLogin()">
+    <div id="logOutInfo" class="closed">Succesfully logged out</div>
+    <div class="logo-animation-div max-width" id="logo-animation-div">
+        <img class="join-logo logo-animation" id="logo-animation" src="./assets/img/join_logo_login.png" alt="Logo">
+        <img class="join-logo logo-animation logo-animation-mobile" id="logo-animation-mobile"
+            src="./assets/img/mobile-logo.png" alt="Logo">
+        <div class="content content-add max-width" id="content-add">
+
+            <div class="flex login-headline">
+                <img class="join-logo" id="logo-no-animation" src="./assets/img/join_logo_login.png" alt="Logo">
+                <div class="registry-link">
+                    <span class="user-question">Not a Join user?</span>
+                    <button class="btn btn1 btn-fontsize btn-sign-up" onclick="openRegistry()">Sign up</button>
+                </div>
+            </div>
+            <div class="screen-layer d-none" id="landscape-message">
+                <div class="landscape-message">
+                    <div class="mobile-phone-rotation">
+                        <img class="mobile-phone" src="assets/img/smartphone.png" alt="rotating device example">
+                    </div>
+                    <p class="max-width-calced device-portrait">Please rotate your device to portrait mode.</p>
+                </div>
+            </div>
+
+            <div class="flex form-position">
+                <form class="flex form" id="login-form" onsubmit="login(event); return false;" novalidate>
+                    <div class="flex main-form">
+                        <div class="flex form-headline">
+                            <h1 class="h1-variant">Log in</h1>
+                            <div class="h1-underline"></div>
+                        </div>
+                        <div class="form-input-fields">
+                            <div class="input-box input-field" id="input-email">
+                                <input type="email" id="email" name="email" autocomplete="username" required
+                                    placeholder="Email" oninput="toggleRememberMe()">
+                                <img src="./assets/img/mail_icon.png" alt="email icon">
+                            </div>
+                            <div>
+                                <div class="input-box input-field" id="input-password">
+                                    <input type="password" id="password" name="password" autocomplete="current-password"
+                                        required placeholder="Password"
+                                        oninput="changePasswordImg(this), toggleRememberMe()">
+                                    <img src="./assets/img/lock-icon.png" alt="locked lock icon" class="password-img"
+                                        id="password-img" onclick="togglePasswordVisibility(this)">
+                                </div>
+                                <div class="msg-box" id="msg-box"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conditional-elements">
+                        <div class="check-item d-none" id="remember-div">
+                            <input type="checkbox" class="invisible-checkbox" id="remember-me" name="remember-me">
+                            <div class="customized-checkbox-container">
+                                <img class="checkbox-img remember-checkbox-img" id="remember-checkbox-img"
+                                    src="./assets/img/unchecked.png" alt="checkbox"
+                                    onclick="toggleRememberCheckboxImg()">
+                                <span class="additional-links remember-text">Remember me.</span>
+                            </div>
+                        </div>
+                        <div class="forgotten-password d-none" id="forgotten-password">
+                            <button class="btn btn-forgotten-password additional-links" id="forgotten-password"
+                                onclick="setNewPassword()">
+                                I forgot my password.
+                            </button>
+                        </div>
+                    </div>
+                    <div class="login-buttons">
+                        <button class="btn btn1 btn-variant" id="log-in-btn">Log in</button>
+                        <button class="btn btn2 btn-variant" onclick="guestLogIn(event)">Guest Log in</button>
+                    </div>
+                </form>
+                <div class="registry-link registry-link-mobile">
+                    <span class="user-question">Not a Join user?</span>
+                    <button class="btn btn1 btn-fontsize btn-sign-up" onclick="openRegistry()">Sign up</button>
+                </div>
+            </div>
+
+            <div class="centered-position">
+                <a class="footer-links" href="privacy-policy.html">Privacy Policy</a>
+                <a class="footer-links" href="legal-notice.html">Legal notice</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

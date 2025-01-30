@@ -1,0 +1,348 @@
+.board-add-task-overlay {
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1300;
+}
+
+.board-add-task-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.board-add-task-modal {
+    max-width: 1123px;
+    background-color: white;
+    border-radius: 30px;
+    padding: 80px 74px;
+    animation: myAnim 1s ease 0s 1 normal forwards;
+}
+
+.board-add-task-modal.hidden {
+    animation: myAnimOut 1s ease 0s 1 normal forwards;
+}
+
+.board-add-task-section-header {
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.add-task-close-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-task-close-btn:hover {
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #eeeeee;
+}
+
+.add-task-form {
+    display: flex;
+    flex-direction: row;
+    gap: 47px;
+    min-height: 592px;
+}
+
+.add-task-form-left {
+    width: 440px;
+}
+
+.add-task-form-seperator {
+    height: 424px;
+    width: 1px;
+    background-color: #D1D1D1;
+}
+
+.add-task-form-right {
+    width: 440px;
+}
+
+label {
+    display: flex;
+    font-size: 20px;
+    color: #2A3647;
+    padding-bottom: 8px;
+}
+
+textarea {
+    margin-top: 8px;
+    margin-bottom: 32px;
+    padding-top: 12px;
+}
+
+textarea:focus {
+    outline: 1px solid #26ace3;
+}
+
+form input {
+    margin-bottom: 32px;
+}
+
+input:focus {
+    outline: 1px solid #26ace3;
+}
+
+select {
+    margin-top: 8px;
+    margin-bottom: 32px;
+}
+
+.add-task-input-headline {
+    display: flex;
+    padding-bottom: 8px;
+    font-size: 20px;
+    color: #2A3647;
+}
+
+.add-task-input-fields {
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+    border: 1px solid #D1D1D1;
+    font-size: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: -28px;
+    margin-bottom: 13px;
+    margin-left: 4px;
+    display: block;
+}
+
+.task-prio {
+    display: flex;
+    flex-direction: column;
+}
+
+.prio-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: 26px;
+    height: 56px;
+}
+
+.prio-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 136px;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 20px;
+
+}
+
+.prio-button:hover {
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.35);
+}
+
+.prio-button p {
+    margin: 0;
+    color: #000;
+}
+
+.prio-button.selected p {
+    color: #fff;
+}
+
+.prio-button.selected img {
+    filter: brightness(0) invert(1);
+}
+
+#urgentPrio.selected {
+    background-color: #ff3e00;
+}
+
+#mediumPrio.selected {
+    background-color: #FFA800;
+}
+
+#lowPrio.selected {
+    background-color: #79E227;
+}
+
+.users {
+    width: 100%;
+    height: 170px;
+    overflow-y: auto;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.task-due-date {
+    position: relative;
+    padding: 0;
+}
+
+.task-due-date img {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+}
+
+.add-task-form-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 104px;
+}
+
+.info-line {
+    display: flex;
+    align-items: flex-end;
+    font-size: 16px;
+}
+
+.info-line-mobile {
+    display: none;
+    font-size: 16px;
+    width: 100%;
+    background-color: white;
+    padding-top: 24px;
+}
+
+.add-task-finish-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.clear-task-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #f7f7f8;
+    color: #2A3647;
+    font-size: 21px;
+    font-weight: 700;
+    border: 1px solid rgba(42, 54, 71, 1);
+    border-radius: 10px;
+    padding: 16px;
+    gap: 10px;
+}
+
+.clear-task-btn:hover {
+    cursor: pointer;
+    border: 1px solid #26ace3;
+    color: #26ace3;
+    transition: .3s;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.35);
+}
+
+.clear-task-btn:hover img {
+    transition: .3s;
+    filter: invert(33%) sepia(88%) saturate(403%) hue-rotate(158deg);
+}
+
+.create-task-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2A3647;
+    color: white;
+    font-size: 21px;
+    font-weight: 700;
+
+    border: none;
+    border-radius: 10px;
+    padding: 16px;
+    gap: 4px;
+}
+
+.create-task-btn:hover {
+    background-color: #26ace3;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.35);
+}
+
+.task-added-to-board-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.task-added-to-board {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    background-color: #2a3647;
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+
+    width: 300px;
+    height: 70px;
+    border-radius: 20px;
+    animation: myAddAnim 1s ease 0s 1 normal forwards;
+}
+
+.task-added-to-board img {
+    width: 32px;
+    height: 29.55px;
+}
+
+.initials-circle-if-to-much {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+@keyframes myAddAnim {
+    0% {
+        opacity: 0;
+        transform: translateY(650px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

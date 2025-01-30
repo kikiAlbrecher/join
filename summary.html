@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+    <script src="./js/include.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/initPortraitMode.js"></script>
+    <script src="./js/navigation.js"></script>
+    <script src="./js/summary.js"></script>
+    <link rel="stylesheet" href="./style/standard.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/summary.css">
+    <link rel="stylesheet" href="./style/summary-responsive.css">
+    <link rel="stylesheet" href="./style/board.css">
+    <link rel="stylesheet" href="./style/navigation.css">
+    <link rel="stylesheet" href="./style/index-registry.css">
+    <link rel="icon" href="./assets/img/join_logo_login.png">
+</head>
+
+<body onload="initSummary()">
+    <div class="content">
+        <div w3-include-html="./assets/templates/navigation.html"></div>
+
+        <main>
+            <div w3-include-html="./assets/templates/header.html"></div>
+
+            <div class="content-fixed flex summary-page" id="section-min-height">
+                <div class="screen-layer d-none" id="landscape-message">
+                    <div class="landscape-message">
+                        <div class="mobile-phone-rotation">
+                            <img class="mobile-phone" src="assets/img/smartphone.png" alt="rotating device example">
+                        </div>
+                        <p class="max-width-calced device-portrait">Please rotate your device to portrait mode.</p>
+                    </div>
+                </div>
+
+                <div class="section-head max-width-calced" id="summary-head">
+                    <h1>Join 360</h1>
+                    <div class="separator"></div>
+                    <h2 class="section-subhead">Key Metrics at a Glance</h2>
+                    <div class="h1-underline h1-underline-summary"></div>
+                </div>
+
+                <section class="summary max-width-calced" id="greeting-min-height">
+                    <div class="summary-content" id="summary-content">
+                        <div class="summary-rows">
+                            <button class="btn summary-btn summary-row1" onclick="transferToBoard()"
+                                onmouseover="toggleImage(true, 'to-do-img', 'assets/img/pencil-white-background.png', 'assets/img/to-do-summary-icon.png')"
+                                onmouseout="toggleImage(false, 'to-do-img', 'assets/img/pencil-white-background.png', 'assets/img/to-do-summary-icon.png')">
+                                <img class="status-img" id="to-do-img" src="./assets/img/to-do-summary-icon.png"
+                                    alt="To do">
+                                <div class="task-count-status">
+                                    <span class="task-count" id="to-do-count">0</span>
+                                    <text class="status">To-do</text>
+                                </div>
+                            </button>
+                            <button class="btn summary-btn summary-row1" onclick="transferToBoard()"
+                                onmouseover="toggleImage(true, 'done-img', 'assets/img/check-mark-white-background.png', 'assets/img/done-summary-icon.png')"
+                                onmouseout="toggleImage(false, 'done-img', 'assets/img/check-mark-white-background.png', 'assets/img/done-summary-icon.png')">
+                                <img class="status-img" id="done-img" src="./assets/img/done-summary-icon.png"
+                                    alt="Done">
+                                <div class="task-count-status">
+                                    <span class="task-count" id="done-count">0</span>
+                                    <text class="status">Done</text>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="summary-rows">
+                            <button class="btn summary-btn summary-row2" onclick="transferToBoard()">
+                                <img class="status-urgent-img" src="./assets/img/urgent_summary_icon.png" alt="Urgent">
+                                <div class="task-count-status">
+                                    <span class="task-count" id="urgent-count">0</span>
+                                    <text class="status status-urgent">Urgent</text>
+                                </div>
+                                <div class="separator separator-variant"></div>
+                                <div class="urgent-deadline">
+                                    <h1 class="h1-variant-deadline" id="next-deadline-date">January 16, 2025</h1>
+                                    <text class="status status-urgent">Upcoming Deadline</text>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="summary-rows">
+                            <button class="btn summary-btn square-btn" onclick="transferToBoard()">
+                                <div class="task-count-status">
+                                    <span class="task-count" id="every-status-count">0</span>
+                                    <text class="status status-width">Tasks In Board</text>
+                                </div>
+                            </button>
+                            <button class="btn summary-btn square-btn" onclick="transferToBoard()">
+                                <div class="task-count-status">
+                                    <span class="task-count" id="in-progress-count">0</span>
+                                    <text class="status status-width status-in-progress">Tasks In Progress</text>
+                                </div>
+                            </button>
+                            <button class="btn summary-btn square-btn" onclick="transferToBoard()">
+                                <div class="task-count-status">
+                                    <span class="task-count" id="awaiting-feedback-count">0</span>
+                                    <text class="status status-width">Awaiting Feedback</text>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="welcome-user" id="summary-greeting">
+                        <text class="welcome flex" id="greet">
+                            <span class="greeting-text" id="greeting-text">Good morning</span>
+                            <span class="user-name" id="user-name"></span>
+                        </text>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
