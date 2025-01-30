@@ -107,14 +107,14 @@ function initializeDatepicker() {
     }
 
     /**
-     * Sets the calendar to display January 2025 by default.
+     * Sets the calendar to display the actual month of the actual year by default.
      */
     function resetCalendarToDefault() {
-        const defaultMonth = "January";
+        const defaultMonth = "February";
         const defaultYear = "2025";
         selectedMonth.textContent = defaultMonth;
         selectedYear.textContent = defaultYear;
-        generateCalendar(1, 2025);
+        generateCalendar(2, 2025);
     }
 
     /**

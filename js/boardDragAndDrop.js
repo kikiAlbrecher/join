@@ -24,7 +24,7 @@ function setDraggedElement(taskId) {
 function hideAllNoTasksMessages() {
   const noTasksMessages = document.querySelectorAll('.no-tasks-message');
   noTasksMessages.forEach(message => {
-      message.style.display = 'none';
+    message.style.display = 'none';
   });
 }
 
@@ -34,7 +34,7 @@ function hideAllNoTasksMessages() {
 function showAllNoTasksMessages() {
   const noTasksMessages = document.querySelectorAll('.no-tasks-message');
   noTasksMessages.forEach(message => {
-      message.style.display = 'flex';
+    message.style.display = 'flex';
   });
 }
 
@@ -46,7 +46,7 @@ function showAllNoTasksMessages() {
 function highlightDropTargets(taskId) {
   const task = findTaskById(taskId);
   if (task) {
-      highlightContainersExceptCurrent(task.status);
+    highlightContainersExceptCurrent(task.status);
   }
 }
 
@@ -74,12 +74,12 @@ function findTaskById(taskId) {
 function highlightContainersExceptCurrent(currentStatus) {
   const statusContainers = getStatusContainers();
   statusOrder.forEach(status => {
-      if (status !== currentStatus) {
-          const container = statusContainers[status];
-          if (container) {
-              showDashedBox(container);
-          }
+    if (status !== currentStatus) {
+      const container = statusContainers[status];
+      if (container) {
+        showDashedBox(container);
       }
+    }
   });
 
   Object.values(statusContainers).forEach(container => {
@@ -158,7 +158,7 @@ function removeAllDashedBoxes() {
  */
 function dropTask(event, newStatus) {
   event.preventDefault();
-  
+
   const taskId = draggedElementId;
   const taskIndex = getTaskIndexById(taskId);
   const task = Object.values(tasksData)[taskIndex];
@@ -180,13 +180,13 @@ function dropTask(event, newStatus) {
  * @param {HTMLElement} container - The container element.
  */
 function checkAndUpdateNoTasksMessage(container) {
-    const taskCards = container.querySelectorAll('.task-card');
+  const taskCards = container.querySelectorAll('.task-card');
 
-    if (taskCards.length === 0) {
-        addNoTasksMessageMoveTo(container);
-    } else {
-        removeNoTasksMessage(container);
-    }
+  if (taskCards.length === 0) {
+    addNoTasksMessageMoveTo(container);
+  } else {
+    removeNoTasksMessage(container);
+  }
 }
 
 /**
@@ -195,11 +195,11 @@ function checkAndUpdateNoTasksMessage(container) {
  * @param {HTMLElement} container - The container element.
  */
 function addNoTasksMessageMoveTo(container) {
-    const noTasksMessage = container.querySelector('.no-tasks-message');
-    if (!noTasksMessage) {
-        const readableStatus = getReadableStatus(container.id);
-        container.innerHTML = getNoTasksTemplate(readableStatus);
-    }
+  const noTasksMessage = container.querySelector('.no-tasks-message');
+  if (!noTasksMessage) {
+    const readableStatus = getReadableStatus(container.id);
+    container.innerHTML = getNoTasksTemplate(readableStatus);
+  }
 }
 
 /**
@@ -208,10 +208,10 @@ function addNoTasksMessageMoveTo(container) {
  * @param {HTMLElement} container - The container element.
  */
 function removeNoTasksMessage(container) {
-    const noTasksMessage = container.querySelector('.no-tasks-message');
-    if (noTasksMessage) {
-        noTasksMessage.remove();
-    }
+  const noTasksMessage = container.querySelector('.no-tasks-message');
+  if (noTasksMessage) {
+    noTasksMessage.remove();
+  }
 }
 
 /**
@@ -221,13 +221,13 @@ function removeNoTasksMessage(container) {
  * @returns {string} The human-readable status name.
  */
 function getReadableStatus(statusId) {
-    const statusMapping = {
-        toDo: "To Do",
-        inProgress: "In Progress",
-        awaitFeedback: "Await Feedback",
-        done: "Done",
-    };
-    return statusMapping[statusId];
+  const statusMapping = {
+    toDo: "To Do",
+    inProgress: "In Progress",
+    awaitFeedback: "Await Feedback",
+    done: "Done",
+  };
+  return statusMapping[statusId];
 }
 
 /**
@@ -240,13 +240,13 @@ function moveTaskCardInDOM(taskId, newStatus) {
   const taskCard = document.querySelector(`.task-card[data-task-id="${taskId}"]`);
   if (taskCard) {
     taskCard.remove();
-  
+
     const statusContainers = getStatusContainers();
     const newContainer = statusContainers[newStatus];
-  
+
     if (newContainer) {
       newContainer.appendChild(taskCard);
-  
+
       const noTasksMessage = newContainer.querySelector('.no-tasks-message');
       if (noTasksMessage) {
         noTasksMessage.remove();

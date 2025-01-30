@@ -52,7 +52,7 @@ function getAssignedUsersTemplate(contact) {
  * @returns {string} The HTML template as a string for the subtask.
  */
 function getSubtaskTemplate(i) {
-    return `
+  return `
       <div class="subtask-list" id="mainSubtask-container${i}">
               <input
                 readonly
@@ -77,7 +77,7 @@ function getSubtaskTemplate(i) {
  * @returns {string} The HTML template as a string for editing the subtask.
  */
 function editSubtaskHTML(i) {
-    return `
+  return `
         <div class="edit-icons">
             <img onclick="deleteSubtask(${i})" id="deleteSubtask${i}" src="./assets/img/delete_icon.svg" alt="delete">
         </div>

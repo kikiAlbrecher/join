@@ -255,16 +255,16 @@ function outsideClickHandler(event) {
  */
 async function editContact(userId) {
   if (validateEditForm()) {
-  let updatedData = getUpdatedEditData();
-  await updateData(updatedData, "contacts", userId);
-  const index = usersArray.findIndex(contact => contact.userId === userId);
-  if (index !== -1) {
-    usersArray[index] = { ...usersArray[index], ...updatedData };
-  }
-  renderContacts(usersArray);
-  contactDetailCard(index);
-  addBackground(index);
-  closeDialog("[editContactDialog]");
+    let updatedData = getUpdatedEditData();
+    await updateData(updatedData, "contacts", userId);
+    const index = usersArray.findIndex(contact => contact.userId === userId);
+    if (index !== -1) {
+      usersArray[index] = { ...usersArray[index], ...updatedData };
+    }
+    renderContacts(usersArray);
+    contactDetailCard(index);
+    addBackground(index);
+    closeDialog("[editContactDialog]");
   }
 }
 

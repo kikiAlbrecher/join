@@ -67,7 +67,7 @@
 .input-box-right {
     display: flex;
     gap: 16px;
-    padding-right: 16px;   
+    padding-right: 16px;
 }
 
 .input-search-icon {
@@ -219,7 +219,8 @@
     border: 2px dashed #aaa;
     border-radius: 24px;
     width: 252px !important;
-    height: 248px !important; /* Passe die Höhe an deine Task-Karten an */
+    height: 248px !important;
+    /* Passe die Höhe an deine Task-Karten an */
     margin: 10px 0;
     display: flex;
     justify-content: center;

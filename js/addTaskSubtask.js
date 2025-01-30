@@ -52,7 +52,7 @@ function addSubtask() {
     document.getElementById('inputSubtask').placeholder = 'Bitte etwas eingeben!';
     return;
   }
-  
+
   document.getElementById('inputSubtask').placeholder = 'Add new Subtask';
   let newTask = { text: input, completed: false };
   subtasks.push(newTask);

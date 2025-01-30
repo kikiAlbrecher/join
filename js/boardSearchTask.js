@@ -3,7 +3,7 @@
  */
 function searchTasks() {
     const searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
-    
+
     if (shouldShowAllTasks(searchQuery)) {
         showAllTasks();
         hideErrorMessage();
@@ -21,7 +21,7 @@ function searchTasks() {
  */
 function searchTasksMobile() {
     const searchQuery = document.getElementById('searchInputMobile').value.trim().toLowerCase();
-    
+
     if (shouldShowAllTasks(searchQuery)) {
         showAllTasks();
         hideErrorMessageMobile();
@@ -80,7 +80,7 @@ function filterTasks(taskCards, searchQuery) {
     taskCards.forEach(card => {
         const taskTitle = getTaskTitle(card);
         const taskDescription = getTaskDescription(card);
-        
+
         if (matchesSearchQuery(taskTitle, taskDescription, searchQuery)) {
             card.style.display = 'flex';
             foundTasks = true;
@@ -88,7 +88,7 @@ function filterTasks(taskCards, searchQuery) {
             card.style.display = 'none';
         }
     });
-    
+
     return foundTasks;
 }
 

@@ -169,15 +169,15 @@ function checkEditorSubtask(i) {
     const subtaskInputContainer = document.getElementById(`mainSubtask-container${i}`)
     const subtaskInput = document.getElementById(`subtaskList${i}`);
     const subtaskText = subtaskInput.value;
-  
+
     if (subtaskText.trim() === '') {
-      subtaskInputContainer.style.borderColor = 'red';
+        subtaskInputContainer.style.borderColor = 'red';
     } else {
-      subtaskInputContainer.style.borderColor = '';
-      currentTask.subtasks[i].text = subtaskInput.value;
-      renderEditorSubtasks();
+        subtaskInputContainer.style.borderColor = '';
+        currentTask.subtasks[i].text = subtaskInput.value;
+        renderEditorSubtasks();
     }
-  }
+}
 
 /**
  * Adds a new subtask to the task.
@@ -296,7 +296,7 @@ function resetTaskEditorAfterAnimation(contentRef, taskCard, delay) {
 function validateInputs() {
     const title = document.getElementById('inputTitle').value.trim();
     const dueDate = document.getElementById('inputDueDate').value.trim();
-    
+
     const isValidTitle = validateTitle(title);
     const isValidDueDate = validateDueDate(dueDate);
 

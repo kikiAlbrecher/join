@@ -10,16 +10,16 @@ let currentUser = [];
  * @returns {Promise<void>} - A promise that resolves when the contacts are fetched and rendered.
  */
 async function getContacts(path) {
-    let response = await fetch(BASE_URL + path + ".json");
-    let contactsJson = await response.json();
-    let contactsArray = [];
-    for (let key in contactsJson) {
-        contactsArray.push({ id: key, ...contactsJson[key] })
-    }
-    usersArray = contactsArray.sort((current, next) =>
-        current.name > next.name ? 1 : next.name > current.name ? -1 : 0
-    );
-    renderContacts(usersArray);
+  let response = await fetch(BASE_URL + path + ".json");
+  let contactsJson = await response.json();
+  let contactsArray = [];
+  for (let key in contactsJson) {
+    contactsArray.push({ id: key, ...contactsJson[key] })
+  }
+  usersArray = contactsArray.sort((current, next) =>
+    current.name > next.name ? 1 : next.name > current.name ? -1 : 0
+  );
+  renderContacts(usersArray);
 }
 
 /**
@@ -31,21 +31,21 @@ async function getContacts(path) {
  * @returns {void}
  */
 function renderContacts(contacts) {
-    document.getElementById("contactsOverview").innerHTML = "";
-    let currentLetter = "";
-    for (let i = 0; i < contacts.length; i++) {
-        if (contacts[i] && contacts[i].name) {
-            let firstLetter = contacts[i].name.charAt(0);
-            let secondLetter = contacts[i].name.charAt(
-                contacts[i].name.indexOf(" ") + 1
-            );
-            if (firstLetter !== currentLetter) {
-                currentLetter = firstLetter;
-                contactsOverview.innerHTML += `<div class="letterGroup">${currentLetter}</div><div id="seperatorContainer"><div id="seperator"></div>`;
-            }
-            document.getElementById("contactsOverview").innerHTML += overviewTemplate(contacts, i, firstLetter, secondLetter);
-        }
+  document.getElementById("contactsOverview").innerHTML = "";
+  let currentLetter = "";
+  for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i] && contacts[i].name) {
+      let firstLetter = contacts[i].name.charAt(0);
+      let secondLetter = contacts[i].name.charAt(
+        contacts[i].name.indexOf(" ") + 1
+      );
+      if (firstLetter !== currentLetter) {
+        currentLetter = firstLetter;
+        contactsOverview.innerHTML += `<div class="letterGroup">${currentLetter}</div><div id="seperatorContainer"><div id="seperator"></div>`;
+      }
+      document.getElementById("contactsOverview").innerHTML += overviewTemplate(contacts, i, firstLetter, secondLetter);
     }
+  }
 }
 
 /**
@@ -57,10 +57,10 @@ function renderContacts(contacts) {
  * @param {number} id - The index of the contact in the `usersArray`.
  */
 function contactDetailCard(id) {
-    let contact = usersArray[id];
-    let contactCardContainer = document.getElementById("contactCard");
-    contactCardContainer.innerHTML = contactCardDetailsTemplate(id, contact);
-    currentUser = contact;
+  let contact = usersArray[id];
+  let contactCardContainer = document.getElementById("contactCard");
+  contactCardContainer.innerHTML = contactCardDetailsTemplate(id, contact);
+  currentUser = contact;
 }
 
 /**

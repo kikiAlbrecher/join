@@ -127,7 +127,7 @@ select {
 
 .prio-button:hover {
     cursor: pointer;
-    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.35);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.35);
 }
 
 .prio-button p {
@@ -136,7 +136,7 @@ select {
 }
 
 .prio-button.selected p {
-    color: #fff; 
+    color: #fff;
 }
 
 .prio-button.selected img {
@@ -209,7 +209,7 @@ select {
     flex-direction: row;
     align-items: center;
     background-color: #f7f7f8;
-    color: #2A3647; 
+    color: #2A3647;
     font-size: 21px;
     font-weight: 700;
 
@@ -225,7 +225,7 @@ select {
     border: 1px solid #26ace3;
     color: #26ace3;
     transition: .3s;
-    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.35);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.35);
 }
 
 .clear-task-btn:hover img {
@@ -251,7 +251,7 @@ select {
     background-color: #26ace3;
     cursor: pointer;
     transition: .3s;
-    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.35);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.35);
 }
 
 .user {
@@ -381,13 +381,13 @@ select {
 }
 
 @keyframes myAddAnim {
-	0% {
-		opacity: 0;
-		transform: translateY(650px);
-	}
+    0% {
+        opacity: 0;
+        transform: translateY(650px);
+    }
 
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

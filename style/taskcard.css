@@ -19,7 +19,7 @@
 .task-card.dragging {
     transform: rotate(3deg);
     transition: transform 0.2s ease;
-} 
+}
 
 .task-card-head {
     display: flex;
@@ -53,7 +53,7 @@
     z-index: 2;
 }
 
-.task-card-menu-pop-up p:hover{
+.task-card-menu-pop-up p:hover {
     cursor: pointer;
     color: #29abe2;
 }
@@ -149,8 +149,3 @@
         display: block;
     }
 }
-
-
-
-
-
