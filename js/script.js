@@ -367,9 +367,11 @@ function toggleLogoutAlert() {
     if (sessionStorage.getItem('logoutFromApp') === 'true') {
         let overlay = document.getElementById('logOutInfo');
         overlay.classList.remove('closed');
+
         setTimeout(() => {
             overlay.classList.add('closed');
         }, 2000);
+        
         sessionStorage.setItem('logoutFromApp', 'false');
     }
 }
