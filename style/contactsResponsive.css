@@ -52,11 +52,19 @@
 }
 
 #arrowBack {
-    width: auto;
+    width: 45px;
+    height: 45px;
+    padding: 6.5px;
     position: absolute;
     left: calc(100vw - 50px);
-    top: 8%;
+    top: 112px;
     display: none;
+    border-radius: 50%;
+    z-index: 9999;
+}
+
+#arrowBack:hover {
+    background-color: #F6F7F8;
 }
 
 @media (max-width: 1300px) {
@@ -91,6 +99,10 @@
 @media (max-width: 1065px) {
     .contactsFixed {
         left: 0;
+    }
+
+    #contactCardPhone {
+        margin-bottom: 96px;
     }
 
     #contactsOverview {
@@ -191,10 +203,17 @@
         font-size: larger;
         cursor: pointer;
     }
+
+    #closingImg {
+        fill: none;
+    }
+
+    #closingImg:hover {
+        background: rgb(41, 171, 226);
+    }
 }
 
 @media (max-width: 800px) {
-
     #contactsOverview {
         max-height: calc(100vh - 200px);
     }
@@ -226,7 +245,7 @@
     }
 
     #arrowBack {
-        display: block;
+        display: flex;
     }
 
     #userName {

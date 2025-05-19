@@ -68,7 +68,7 @@
     justify-content: center;
     margin-right: 48px;
     font-size: 47px;
-    box-shadow: 0px 0px 4px grey;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
     border: 3px solid white;
 }
 
@@ -333,10 +333,16 @@
     width: 422px;
 }
 
+#closingImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    fill: rgb(0, 0, 0);
+}
+
 #closingImg:hover {
     cursor: pointer;
     background-color: rgb(230, 223, 223);
-    border-radius: 90%;
 }
 
 .chosen {

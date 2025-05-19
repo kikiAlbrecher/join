@@ -42,6 +42,7 @@ function loadUserCredentials() {
 async function usersPush() {
     let userResponse = await loadUsers("users");
     let userKeysArray = Object.keys(userResponse);
+
     for (let i = 0; i < userKeysArray.length; i++) {
         users.push({
             id: userKeysArray[i],
@@ -58,6 +59,7 @@ async function usersPush() {
  */
 async function loadUsers(path = "") {
     let response = await fetch(BASE_URL + path + ".json");
+
     return responseAsJson = await response.json();
 }
 
@@ -236,6 +238,7 @@ function forgotPasswordQuote() {
  */
 function setNewPassword() {
     const email = document.getElementById('email').value;
+
     window.location.href = `forgotten-password.html?email=${encodeURIComponent(email)}`;
 }
 
@@ -245,6 +248,7 @@ function setNewPassword() {
  */
 function toggleUserMenu() {
     const userMenuRef = document.getElementById('userMenu');
+
     userMenuRef.classList.toggle('menu-closed');
 }
 
@@ -293,6 +297,7 @@ function displayUserInitialsHeader(currentUserName) {
 function getUserInitials(currentUserName) {
     let nameParts = currentUserName.split(' ');
     let initials = nameParts.map(part => part.charAt(0).toUpperCase()).join('');
+
     return initials;
 }
 
@@ -329,6 +334,7 @@ function logout() {
     } else if (guestUserName) {
         logoutGuest();
     }
+
     sessionStorage.setItem('logoutFromApp', 'true');
 }
 
@@ -368,10 +374,8 @@ function toggleLogoutAlert() {
         let overlay = document.getElementById('logOutInfo');
         overlay.classList.remove('closed');
 
-        setTimeout(() => {
-            overlay.classList.add('closed');
-        }, 2000);
-        
+        setTimeout(() => overlay.classList.add('closed'), 2000);
+
         sessionStorage.setItem('logoutFromApp', 'false');
     }
 }

@@ -63,7 +63,9 @@ function newContactTemplate() {
     return `
       <div id="newContactContent">
         <div id="addContactHeaderContainer">
-            <div id="responsiveClose" onclick="closeDialog('[newContactDialog]')">X</div>
+            <div id="responsiveClose" onclick="closeDialog('[newContactDialog]')">
+                <img id="closingImg" src="assets/img/close.svg" alt="close Dialog">
+            </div>
             <div id="addContactHeader">
                 <div id="joinLogo">
                     <img src="assets/img/join_logo_menu.png" alt="Join Logo">
@@ -82,7 +84,14 @@ function newContactTemplate() {
             <div id="formContainer">
                 <div id="addUserFormContainer">
                     <div id="cancelImgContainer">
-                        <img src="./assets/img/cancel_icon.png" id="closingImg" alt="Cancel" onclick="closeDialog('[newContactDialog]');">
+                        <svg id="closingImg" alt="Cancel" onclick="closeDialog('[newContactDialog]');" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_71720_5527" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="24" height="24">
+                                <rect x="4" y="4" width="24" height="24" fill="#000000"/>
+                            </mask>
+                            <g mask="url(#mask0_71720_5527)">
+                                <path d="M16 17.4L11.1 22.3C10.9167 22.4834 10.6833 22.575 10.4 22.575C10.1167 22.575 9.88332 22.4834 9.69999 22.3C9.51665 22.1167 9.42499 21.8834 9.42499 21.6C9.42499 21.3167 9.51665 21.0834 9.69999 20.9L14.6 16L9.69999 11.1C9.51665 10.9167 9.42499 10.6834 9.42499 10.4C9.42499 10.1167 9.51665 9.88338 9.69999 9.70005C9.88332 9.51672 10.1167 9.42505 10.4 9.42505C10.6833 9.42505 10.9167 9.51672 11.1 9.70005L16 14.6L20.9 9.70005C21.0833 9.51672 21.3167 9.42505 21.6 9.42505C21.8833 9.42505 22.1167 9.51672 22.3 9.70005C22.4833 9.88338 22.575 10.1167 22.575 10.4C22.575 10.6834 22.4833 10.9167 22.3 11.1L17.4 16L22.3 20.9C22.4833 21.0834 22.575 21.3167 22.575 21.6C22.575 21.8834 22.4833 22.1167 22.3 22.3C22.1167 22.4834 21.8833 22.575 21.6 22.575C21.3167 22.575 21.0833 22.4834 20.9 22.3L16 17.4Z" fill="#2A3647"/>
+                            </g>
+                        </svg>
                     </div>
                     <form id="newUserForm" novalidate>
                         <div class="inputField">
@@ -104,7 +113,7 @@ function newContactTemplate() {
                 </div>
             </div>
             <div id="btnContainer">
-              <button id="btnCancel" class="clear-task-btn" type="button" onclick="closeDialog('[newContactDialog]');">Cancel<img src="./assets/img/cancel_icon.png" alt="cancel icon"></button>
+              <button id="btnCancel" class="clear-task-btn" type="button" onclick="closeDialog('[newContactDialog]');">Cancel<img src="./assets/img/cancel_icon.svg" alt="cancel icon"></button>
               <button id="btnCreate" class="create-task-btn" type="submit" form="newUserForm">Create Contact<img src="./assets/img/check_icon.png" alt="create icon"></button>
             </div>
         </div>
@@ -119,7 +128,9 @@ function editContactTemplate(user) {
     return `
             <div id="newContactContent">
               <div id="addContactHeaderContainer">
-              <div id="responsiveClose" onclick="closeDialog('[editContactDialog]')">X</div>
+              <div id="responsiveClose" onclick="closeDialog('[editContactDialog]')">
+                <img id="closingImg" src="assets/img/close.svg" alt="close Dialog">
+              </div>
               <div id="addContactHeader">
                   <div id="joinLogo">
                       <img src="assets/img/join_logo_menu.png" alt="Join Logo">
@@ -137,7 +148,14 @@ function editContactTemplate(user) {
               <div id="formContainer">
                   <div id="addUserFormContainer">
                       <div id="cancelImgContainer">
-                          <img src="./assets/img/cancel_icon.png" id="closingImg" alt="Cancel" onclick="closeDialog('[editContactDialog]');">
+                        <svg id="closingImg" alt="Cancel" onclick="closeDialog('[editContactDialog]');" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_71720_5527" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="24" height="24">
+                                <rect x="4" y="4" width="24" height="24" fill="#000000"/>
+                            </mask>
+                            <g mask="url(#mask0_71720_5527)">
+                                <path d="M16 17.4L11.1 22.3C10.9167 22.4834 10.6833 22.575 10.4 22.575C10.1167 22.575 9.88332 22.4834 9.69999 22.3C9.51665 22.1167 9.42499 21.8834 9.42499 21.6C9.42499 21.3167 9.51665 21.0834 9.69999 20.9L14.6 16L9.69999 11.1C9.51665 10.9167 9.42499 10.6834 9.42499 10.4C9.42499 10.1167 9.51665 9.88338 9.69999 9.70005C9.88332 9.51672 10.1167 9.42505 10.4 9.42505C10.6833 9.42505 10.9167 9.51672 11.1 9.70005L16 14.6L20.9 9.70005C21.0833 9.51672 21.3167 9.42505 21.6 9.42505C21.8833 9.42505 22.1167 9.51672 22.3 9.70005C22.4833 9.88338 22.575 10.1167 22.575 10.4C22.575 10.6834 22.4833 10.9167 22.3 11.1L17.4 16L22.3 20.9C22.4833 21.0834 22.575 21.3167 22.575 21.6C22.575 21.8834 22.4833 22.1167 22.3 22.3C22.1167 22.4834 21.8833 22.575 21.6 22.575C21.3167 22.575 21.0833 22.4834 20.9 22.3L16 17.4Z" fill="#2A3647"/>
+                            </g>
+                        </svg>
                       </div>
                       <form id="newUserForm">
                           <div class="inputField">
