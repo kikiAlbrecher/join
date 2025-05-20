@@ -6,61 +6,103 @@ let users = [];
  * 
  * This function is responsible for initializing various aspects of the login page, 
  * including checking for animations, ensuring the page layout works correctly in portrait mode, 
- * loading user credentials from session or storage, verifying if "Remember Me" is checked, 
+ * loading user credentials from storage, if "remember me" was checked in a previous session, 
  * pushing user data, and toggling the logout alert if applicable.
+ * 
+ * @async
+ * @returns {Promise<void>} A promise that resolves when initialization is complete.
  */
-function initLogin() {
+async function initLogin() {
     checkLogoAnimation();
     initPortraitMode();
     loadUserCredentials();
     checkRememberMe();
-    usersPush();
+    await pushOrFallback();
     toggleLogoutAlert();
 }
 
 /**
- * Loads the stored user credentials from localStorage if the "Remember Me" option is checked.
+ * Attempts to fetch user data and handle any potential errors.
+ *
+ * If the data fetch from Firebase fails (e.g., due to a network or server issue),
+ * an error message is displayed to the user.
+ *
+ * @async
+ * @returns {Promise<void>} A promise that resolves when user data is either successfully fetched or an error is handled.
  */
-function loadUserCredentials() {
-    const rememberMe = localStorage.getItem('rememberMe');
-
-    if (rememberMe === 'true') {
-        const storedEmail = localStorage.getItem('email');
-        const storedPassword = localStorage.getItem('password');
-
-        if (storedEmail && storedPassword) {
-            document.getElementById('email').value = storedEmail;
-            document.getElementById('password').value = storedPassword;
-        }
+async function pushOrFallback() {
+    try {
+        await getUserResponse();
+    } catch (e) {
+        handleError(e);
     }
 }
 
 /**
- * Pushes the user data from the Firebase database into the local "users" array.
- * It fetches the data asynchronously and processes each user's key (= id) and information (= name, email, password).
+ * Loads user data from Firebase and passes it to the processing function.
+ * This function fetches user data and forwards it to `usersPush()`.
+ * If the response is invalid or not an object, the function silently exits.
+ *
+ * @async
+ * @returns {Promise<void>} A promise that resolves after the data has been forwarded or skipped.
  */
-async function usersPush() {
+async function getUserResponse() {
     let userResponse = await loadUsers("users");
-    let userKeysArray = Object.keys(userResponse);
+
+    if (!userResponse || typeof userResponse !== 'object') return;
+    usersPush(userResponse);
+}
+
+/**
+ * Processes and stores valid user entries from the response into the global `users` array.
+ * Skips entries that are `null` or not objects (e.g., if a user has been deleted from Firebase).
+ *
+ * @param {Object} userResponse - The object containing users fetched from Firebase.
+ */
+function usersPush(userResponse) {
+    const userKeysArray = Object.keys(userResponse);
 
     for (let i = 0; i < userKeysArray.length; i++) {
+        const userData = userResponse[userKeysArray[i]];
+
+        if (!userData || typeof userData !== 'object') continue;
+
         users.push({
             id: userKeysArray[i],
-            user: userResponse[userKeysArray[i]]
+            user: userData
         });
     }
 }
 
 /**
  * Fetches the user data from the Firebase database.
+ * If a failure occurs during fetching, a message will be shown in the DOM.
  * 
+ * @async
  * @param {string} path - The path in the database to fetch the user data from.
- * @returns {Object} The response data from the database, parsed as JSON.
+ * @returns {Promise<Object>} A promise that resolves with the parsed JSON response from Firebase.
+ * @throws {Error} If the fetch request fails or returns a non-OK response.
  */
 async function loadUsers(path = "") {
-    let response = await fetch(BASE_URL + path + ".json");
+    const response = await fetch(`${BASE_URL}${path}.json`);
 
-    return responseAsJson = await response.json();
+    if (!response.ok) {
+        throw new Error(`Failed to fetch users: ${response.status} ${response.statusText}`);
+    }
+
+    return await response.json();
+}
+
+/**
+ * Handles errors that could occur during the data fetching process.
+ * 
+ * @param {Error} e - The error object containing details about what went wrong.
+ */
+function handleError(e) {
+    let errorMessageRef = document.getElementById('error-message');
+
+    errorMessageRef.classList.remove('d-none');
+    errorMessageRef.innerHTML = getErrorMessage(e);
 }
 
 /**
@@ -118,7 +160,7 @@ function login(event) {
     event.preventDefault();
     const email = document.getElementById('email');
     const password = document.getElementById('password');
-    let user = users.find(user => user.user.email === email.value && user.user.password === password.value);
+    let user = users.find(user => user.user && user.user.email === email.value && user.user.password === password.value);
 
     if (user) {
         sessionStorage.setItem('loggedInUserName', user.user.name);
@@ -216,30 +258,6 @@ function uncheckCheckbox() {
  */
 function transferToSummary() {
     window.location.href = 'summary.html';
-}
-
-/**
- * Displays or hides the "Forgotten Password" link based on whether the provided email exists and the password is incorrect.
- */
-function forgotPasswordQuote() {
-    const emailRef = document.getElementById('email');
-    const passwordRef = document.getElementById('password');
-
-    if (emailRef && passwordRef) {
-        let forgottenPasswordRef = document.getElementById('forgotten-password');
-        let forgottenPasswordConditions = users.find(user => user.user.email === email.value && user.user.password !== password.value);
-
-        forgottenPasswordConditions ? forgottenPasswordRef.classList.remove('d-none') : forgottenPasswordRef.classList.add('d-none');
-    }
-}
-
-/**
- * Redirects the user to the password reset page with the email passed as a query parameter.
- */
-function setNewPassword() {
-    const email = document.getElementById('email').value;
-
-    window.location.href = `forgotten-password.html?email=${encodeURIComponent(email)}`;
 }
 
 /**

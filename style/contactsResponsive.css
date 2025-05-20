@@ -78,17 +78,21 @@
         height: auto;
         align-items: start;
         flex-direction: column;
+        gap: 8px;
     }
 
-    .blueLine {
-        background-color: rgb(41, 171, 226);
-        height: 3px;
-        width: 76px;
-        margin: 8px 0 8px 0;
+    .blue-line {
+        display: none;
     }
 
     #spanBetter {
         margin: 0;
+    }
+
+    #spanBetterUnderline {
+        border-bottom: 3px solid #29ABE2;
+        width: 90px;
+        padding-bottom: 16px;
     }
 
     #userName {
@@ -307,10 +311,6 @@
     .error-message {
         margin-top: -12px;
         margin-bottom: 8px;
-    }
-
-    #blueLineMobile {
-        display: block;
     }
 
     #blueLineDesktop {

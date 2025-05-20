@@ -166,7 +166,7 @@
     height: 60px;
 }
 
-.blueLine {
+.blue-line {
     width: 3px;
     height: 76px;
     background-color: rgb(41, 171, 226);
@@ -360,8 +360,4 @@
 
 .landscape-message {
     height: 100vh;
-}
-
-#blueLineMobile {
-    display: none;
 }

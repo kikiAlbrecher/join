@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join - Contacts</title>
+  <title>Join</title>
   <script src="./js/include.js"></script>
   <script src="./js/script.js"></script>
   <script src="./js/navigation.js"></script>
@@ -31,9 +31,10 @@
   <div class="content">
     <div w3-include-html="./assets/templates/navigation.html"></div>
     <main>
-        <dialog newContactDialog id="contactDialog" onshow="renderNewContactForm()" class="dialogDesktop dialogNorm"></dialog>
-        <dialog editContactDialog id="editContactDialog" class="dialogDesktop dialogNorm"></dialog>
-        <dialog id="responsiveContactDialog"></dialog>
+      <dialog newContactDialog id="contactDialog" onshow="renderNewContactForm()" class="dialogDesktop dialogNorm">
+      </dialog>
+      <dialog editContactDialog id="editContactDialog" class="dialogDesktop dialogNorm"></dialog>
+      <dialog id="responsiveContactDialog"></dialog>
       <div id="statusAlert" class="">Contact succesfull created</div>
       <div w3-include-html="./assets/templates/header.html"></div>
       <div class="landscape-message d-none" id="landscape-message">
@@ -41,16 +42,19 @@
       </div>
       <div id="contactDetails" class="max-width contactsFixed">
         <div id="wrapperContacts">
-          <div id="btn_addNewContact" onclick="openDialog()"; data-infobox="contactCard">Add new contact<img src="assets/img/add_contact_icon.png" alt="Add Contact Icon" /></div>
-          <button id="btn_addNewContactResponsive" type="button" onclick="openDialog()"><img src="assets/img/add_contact_icon.png" alt="Add Contact Icon" /></button>
+          <div id="btn_addNewContact" onclick="openDialog()" ; data-infobox="contactCard">Add new contact<img
+              src="assets/img/add_contact_icon.png" alt="Add Contact Icon" /></div>
+          <button id="btn_addNewContactResponsive" type="button" onclick="openDialog()"><img
+              src="assets/img/add_contact_icon.png" alt="Add Contact Icon" /></button>
           <div id="contactsOverview"></div>
         </div>
         <div id="contactDetailsContainer">
           <div id="contactDetailsHeader">
-            <span id="spanContacts">Contacts<div id="arrowBack"><img src="assets/img/arrow_left_icon.png" alt="arrowBack" onclick="closeDetailsResponsive()"></div></span>
-            <div id="blueLineDesktop" class="blueLine"></div>
+            <span id="spanContacts">Contacts<div id="arrowBack"><img src="assets/img/arrow_left_icon.png"
+                  alt="arrowBack" onclick="closeDetailsResponsive()"></div></span>
+            <div id="blueLineDesktop" class="blue-line"></div>
             <span id="spanBetter"> Better with a team</span>
-            <div id="blueLineMobile" class="blueLine"></div>
+            <div id="spanBetterUnderline"></div>
           </div>
           <div id="contactCard" class="infobox infoboxClosed"></div>
         </div>
@@ -58,4 +62,5 @@
     </main>
   </div>
 </body>
+
 </html>

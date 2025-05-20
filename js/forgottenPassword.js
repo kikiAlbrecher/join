@@ -1,4 +1,28 @@
 /**
+ * Displays or hides the "Forgotten Password" link based on whether the provided email exists and the password is incorrect.
+ */
+function forgotPasswordQuote() {
+    const emailRef = document.getElementById('email');
+    const passwordRef = document.getElementById('password');
+
+    if (emailRef && passwordRef) {
+        let forgottenPasswordRef = document.getElementById('forgotten-password');
+        let forgottenPasswordConditions = users.find(user => user.user.email === email.value && user.user.password !== password.value);
+
+        forgottenPasswordConditions ? forgottenPasswordRef.classList.remove('d-none') : forgottenPasswordRef.classList.add('d-none');
+    }
+}
+
+/**
+ * Redirects the user to the password reset page with the email passed as a query parameter.
+ */
+function setNewPassword() {
+    const email = document.getElementById('email').value;
+
+    window.location.href = `forgotten-password.html?email=${encodeURIComponent(email)}`;
+}
+
+/**
  * Initializes the reset password process by setting up necessary components and configurations.
  * It includes the footer, and initializes the portrait mode.
  */
@@ -30,6 +54,7 @@ async function saveNewPassword(event) {
         if (user) {
             const { userId } = user;
             let newPassword = password;
+
             await updateUserPassword(userId, newPassword);
             confirmPasswordReset();
         }
@@ -45,6 +70,7 @@ async function saveNewPassword(event) {
  */
 function getEmailFromURL() {
     const urlParams = new URLSearchParams(window.location.search);
+
     return urlParams.get('email');
 }
 
@@ -62,6 +88,7 @@ function getEmailFromURL() {
 async function getUserByEmail(email) {
     const users = await loadUsers("users");
     const userId = Object.keys(users).find(userId => users[userId].email === email);
+
     return userId ? { userId, user: users[userId] } : null;
 }
 

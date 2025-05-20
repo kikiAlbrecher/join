@@ -221,6 +221,25 @@ async function addTask(task) {
 }
 
 /**
+ * Loads the contact data and displays it in the UI.
+ *
+ * @async
+ */
+async function loadData() {
+    try {
+        let response = await fetch(BASE_URL + "contacts.json");
+        let responseToJson = await response.json();
+
+        contacts = responseToJson;
+
+        renderUsers(contacts);
+        showAssignedUsers();
+    } catch (error) {
+        console.error("Error loading data:", error);
+    }
+}
+
+/**
  * Saves the tasks in the data source.
  *
  * @async
@@ -237,25 +256,6 @@ async function putTask(path = "", tasks = {}) {
         body: JSON.stringify(tasks)
     });
     return responseAsJson = await response.json();
-}
-
-/**
- * Loads the contact data and displays it in the UI.
- *
- * @async
- */
-async function loadData() {
-    try {
-        let response = await fetch(BASE_URL + "/contacts.json");
-        let responseToJson = await response.json();
-
-        contacts = responseToJson;
-
-        renderUsers(contacts);
-        showAssignedUsers();
-    } catch (error) {
-        console.error("Error loading data:", error);
-    }
 }
 
 /**

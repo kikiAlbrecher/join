@@ -1,4 +1,23 @@
 /**
+ * Loads the stored user credentials from localStorage if the "Remember Me" option has been chosen 
+ * by the user in a former sessions.
+ * Email and password are automatically filled into the corresponding input fields.
+ */
+function loadUserCredentials() {
+    const rememberMe = localStorage.getItem('rememberMe');
+
+    if (rememberMe === 'true') {
+        const storedEmail = localStorage.getItem('email');
+        const storedPassword = localStorage.getItem('password');
+
+        if (storedEmail && storedPassword) {
+            document.getElementById('email').value = storedEmail;
+            document.getElementById('password').value = storedPassword;
+        }
+    }
+}
+
+/**
  * Toggles the visibility of the "Remember me" checkbox based on whether the email 
  * and the password input fields are filled out.
  * 

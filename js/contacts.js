@@ -1,6 +1,6 @@
 let path = "contacts";
 let usersArray = [];
-let userColorsPreset = ["#FF7A00", "#FF5EB3", "#6E52FF", "#9327FF", "#00BEE8", "#1FD7C1", "#FF745E", "#FFA35E", "#FC71FF", "#FFC701", "#0038FF", "#C3FF2B", "#FFE62B", "#FF4646", "#FFBB2B"];
+let userColorsPreset = ["#FF7A00", "#FF5EB3", "#6E52FF", "#9327FF", "#00BEE8", "#1FD7C1", "#FF745E", "#FFA35E", "#FC71FF", "#FFC701", "#0038FF", "#C3FF2B", "#FFFF4D", "#FF4646", "#FFBB2B"];
 
 function initContacts() {
   includeHTML();
@@ -69,7 +69,7 @@ async function addNewData(data, path, key) {
  * - if not it will open the card by adding the class "open"
  */
 function openContactDetailsCard(infoboxId) {
-  const contactCard = document.getElementById('contactCard');
+  let contactCard = document.getElementById('contactCard');
 
   if (contactCard) {
     if (contactCard.classList.contains("open")) {
@@ -182,11 +182,9 @@ function openDialog() {
  * renders the new contact form into modal and validate the user inputs
  */
 function renderNewContactForm() {
-  let contactDialogRef = document.getElementById('contactDialog');
-  contactDialogRef.innerHTML = '';
-  let form = document.getElementById('newUserForm');
+  document.getElementById('contactDialog').innerHTML = newContactTemplate();
 
-  contactDialogRef.innerHTML = newContactTemplate();
+  let form = document.getElementById('newUserForm');
   if (form) {
     form.addEventListener("submit", (event) => {
       event.preventDefault();

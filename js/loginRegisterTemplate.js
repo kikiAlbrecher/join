@@ -1,4 +1,22 @@
 /**
+ * Generates an HTML string containing a styled error message to be displayed
+ * when a problem occurs, such as a failure to connect to Firebase.
+ *
+ * @param {Error} error - The error object containing details about the issue.
+ * @returns {string} An HTML string displaying the error message inside a styled container.
+ */
+function getErrorMessage(error) {
+    return `
+        <div class="flex firebase-error">
+            <div class="flex error-text">
+                <h3>A problem occurred. Please reload the website or try again later.</h3>
+                <p>${error.message}</p>
+            </div>
+        </div>
+    `;
+}
+
+/**
  * Generates an HTML template for a success message displayed in an overlay.
  * This template includes a button with a given success message.
  *
