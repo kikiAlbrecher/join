@@ -26,11 +26,8 @@ function summaryRepresentation() {
     const summaryContentRef = document.getElementById('summary-content');
 
     if (summaryHeadRef || summaryContentRef) {
-        if (innerWidth < 1065) {
-            summaryMobile();
-        } else {
-            summaryDesktop();
-        }
+        if (innerWidth < 1065) summaryMobile();
+        else summaryDesktop();
     }
 }
 
@@ -124,13 +121,9 @@ function greetUser() {
  * @returns {string} - A greeting message based on the time.
  */
 function getGreetingBasedOnTime(hours) {
-    if (hours >= 1 && hours < 12) {
-        return 'Good morning';
-    } else if (hours >= 12 && hours < 17) {
-        return 'Good afternoon';
-    } else {
-        return 'Good evening';
-    }
+    if (hours >= 1 && hours < 12) return 'Good morning';
+    else if (hours >= 12 && hours < 17) return 'Good afternoon';
+    else return 'Good evening';
 }
 
 /**
@@ -150,6 +143,7 @@ function transferToBoard() {
  */
 function toggleImage(isHovered, imgId, hoverSrc, originalSrc) {
     const imgRef = document.getElementById(imgId);
+
     imgRef.src = isHovered ? hoverSrc : originalSrc;
 }
 
@@ -165,9 +159,12 @@ function toggleImage(isHovered, imgId, hoverSrc, originalSrc) {
  */
 async function showCurrentTasksCount() {
     let tasksData = await loadTasks("tasks");
+
     if (tasksData && tasksData.length > 0) {
         updateSummaryStatusCount(tasksData);
+
         const selectedTask = updateUrgentTaskDeadline(tasksData);
+
         updateUrgentTasksCount(selectedTask, urgentUnfinishedTasks);
     } else {
         updateSummaryStatusCount([]);
@@ -187,8 +184,11 @@ async function showCurrentTasksCount() {
 async function loadTasks(path = "") {
     try {
         let response = await fetch(BASE_URL + path + ".json");
+
         if (!response.ok) throw new Error('Failed to fetch tasks data');
+
         const data = await response.json();
+
         return data ? Object.values(data).filter(task => task && task.status) : [];
     } catch (error) {
         console.error('Error loading tasks:', error);
@@ -207,6 +207,7 @@ async function loadTasks(path = "") {
  */
 function countTasksByStatus(tasksData) {
     const statusCount = { 'todo': 0, 'done': 0, 'in-progress': 0, 'await-feedback': 0 };
+
     tasksData.forEach(task => task && task.status && statusCount.hasOwnProperty(task.status) && statusCount[task.status]++);
     return statusCount;
 }
@@ -223,6 +224,7 @@ function countTasksByStatus(tasksData) {
  */
 function updateSummaryStatusCount(tasksData) {
     let statusCount = countTasksByStatus(tasksData);
+
     document.getElementById('to-do-count').innerText = statusCount['todo'];
     document.getElementById('done-count').innerText = statusCount['done'];
     document.getElementById('in-progress-count').innerText = statusCount['in-progress'];
@@ -245,6 +247,7 @@ function updateUrgentTaskDeadline(tasksData) {
 
     if (selectedTask) {
         let dueDate = new Date(selectedTask.dueDate.split('/').reverse().join('/'));
+
         document.getElementById('next-deadline-date').innerHTML = dueDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
         return selectedTask;
     } else {
@@ -268,6 +271,7 @@ function findUrgentTaskWithNearestDeadline(tasksData) {
     urgentUnfinishedTasks.forEach(task => {
         let dueDate = new Date(task.dueDate.split('/').reverse().join('/'));
         let diffTime = dueDate - yesterday;
+
         if (dueDate >= yesterday && (selectedDateDiff === null || diffTime <= selectedDateDiff)) {
             selectedTask = task;
             selectedDateDiff = diffTime;
@@ -289,6 +293,7 @@ function findUrgentTaskWithNearestDeadline(tasksData) {
 function countUrgentTasksBeforeDueDate(urgentUnfinishedTasks, nearestDueDate) {
     return urgentUnfinishedTasks.filter(task => {
         let taskDueDate = new Date(task.dueDate.split('/').reverse().join('/'));
+
         return taskDueDate <= nearestDueDate;
     }).length;
 }
@@ -308,6 +313,7 @@ function updateUrgentTasksCount(selectedTask, urgentUnfinishedTasks) {
     if (selectedTask) {
         let dueDate = new Date(selectedTask.dueDate.split('/').reverse().join('/'));
         let urgentCount = countUrgentTasksBeforeDueDate(urgentUnfinishedTasks, dueDate);
+
         document.getElementById('urgent-count').innerText = urgentCount;
     } else {
         document.getElementById('urgent-count').innerText = 0;

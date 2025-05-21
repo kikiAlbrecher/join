@@ -104,7 +104,7 @@ async function getUserDataById(userId) {
             return userData;
         }
     } catch (error) {
-        console.error(`Fehler beim Laden der Benutzerdaten für die ID ${userId}:`, error);
+        console.error(`Error while loading user data for the id ${userId}:`, error);
         return null;
     }
 }

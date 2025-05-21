@@ -8,7 +8,7 @@ async function openTaskDetail(taskId) {
   const task = tasksData.find(t => t.id === taskId);
 
   if (!task) {
-    console.warn(`Aufgabe mit ID "${taskId}" nicht gefunden.`);
+    console.warn(`Task with id "${taskId}" is not found.`);
     return;
   }
 
@@ -115,7 +115,7 @@ async function sendFirebasePatchRequest(path, updateData) {
  * @param {Error} error - The error object.
  */
 function logFirebaseUpdateError(error) {
-  console.error("Fehler beim Aktualisieren der Subtask in Firebase:", error);
+  console.error('Error while updating the subtask in Firebase:', error);
 }
 
 /**
@@ -191,5 +191,5 @@ function removeTaskCardFromDOM(taskId) {
  * @param {Error} error - The error object.
  */
 function logTaskDeletionError(error) {
-  console.error("Fehler beim Löschen der Task:", error);
+  console.error('Error while deleting the task:', error);
 }
