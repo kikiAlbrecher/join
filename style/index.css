@@ -144,7 +144,7 @@
 }
 
 .h1-underline {
-    border-bottom: solid 3px #29ABE2;
+    border-bottom: 3px solid #29ABE2;
     width: 150px;
     padding-bottom: 16px;
 }
@@ -194,7 +194,6 @@
 .red-border {
     border-color: #FF001F;
 }
-
 
 .password-msg {
     display: flex;

@@ -138,4 +138,3 @@ function closeTaskCardMenu(event) {
         taskCardMenu.style.display = "none";
     }
 }
-
