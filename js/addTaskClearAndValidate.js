@@ -24,6 +24,7 @@ function clearFormFields() {
  */
 function resetAssignedUsers() {
     assignedTo = [];
+
     showAssignedUsers();
     clearAssignedCheckboxes();
 }
@@ -33,6 +34,7 @@ function resetAssignedUsers() {
  */
 function resetPriority() {
     selectedPriority = "Medium";
+
     selectPriority(selectedPriority);
 }
 
@@ -41,6 +43,7 @@ function resetPriority() {
  */
 function resetCategory() {
     selectedCategory = "Select task category";
+
     initializeCategory();
 }
 
@@ -49,6 +52,7 @@ function resetCategory() {
  */
 function resetSubtasks() {
     subtasks = [];
+
     renderSubtasks();
 }
 
@@ -152,15 +156,10 @@ function validateDueDate() {
     const dueDateInput = document.getElementById('inputDueDate');
     const dueDateErrorMessage = document.getElementById('inputDueDateError');
 
-    if (!validateDueDatePresence(dueDateInput, dueDateErrorMessage)) {
-        return false;
-    }
-    if (!validateDueDateFormat(dueDateInput, dueDateErrorMessage)) {
-        return false;
-    }
-    if (!validateDueDatePast(dueDateInput, dueDateErrorMessage)) {
-        return false;
-    }
+    if (!validateDueDatePresence(dueDateInput, dueDateErrorMessage)) return false;
+    if (!validateDueDateFormat(dueDateInput, dueDateErrorMessage)) return false;
+    if (!validateDueDatePast(dueDateInput, dueDateErrorMessage)) return false;
+
     hideDueDateError(dueDateInput, dueDateErrorMessage);
     return true;
 }
@@ -177,6 +176,7 @@ function validateDueDatePresence(dueDateInput, dueDateErrorMessage) {
         showDueDateError(dueDateInput, dueDateErrorMessage, "This field is required.");
         return false;
     }
+
     return true;
 }
 
@@ -189,10 +189,12 @@ function validateDueDatePresence(dueDateInput, dueDateErrorMessage) {
  */
 function validateDueDateFormat(dueDateInput, dueDateErrorMessage) {
     const dateValidationError = isValidDateFormat(dueDateInput.value);
+
     if (dateValidationError) {
         showDueDateError(dueDateInput, dueDateErrorMessage, dateValidationError);
         return false;
     }
+
     return true;
 }
 
@@ -208,6 +210,7 @@ function validateDueDatePast(dueDateInput, dueDateErrorMessage) {
         showDueDateError(dueDateInput, dueDateErrorMessage, "The date cannot be in the past.");
         return false;
     }
+
     return true;
 }
 
@@ -253,6 +256,7 @@ function isValidDateFormat(date) {
  */
 function isMatchingDatePattern(date) {
     const dateRegex = /^\d{2}\/\d{2}\/\d{4}$/;
+
     return dateRegex.test(date);
 }
 
@@ -280,6 +284,7 @@ function areDateComponentsRealistic(day, month, year) {
  */
 function isDateParsable(day, month, year) {
     const parsedDate = new Date(year, month - 1, day);
+
     return parsedDate.getFullYear() === year &&
         parsedDate.getMonth() === month - 1 &&
         parsedDate.getDate() === day;
@@ -295,6 +300,7 @@ function isDateInPast(date) {
     const [day, month, year] = date.split("/").map(Number);
     const enteredDate = new Date(year, month - 1, day);
     const today = new Date();
+
     today.setHours(0, 0, 0, 0);
 
     return enteredDate < today;

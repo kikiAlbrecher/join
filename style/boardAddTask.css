@@ -322,7 +322,7 @@ select {
     height: 29.55px;
 }
 
-.initials-circle-if-to-much {
+.initials-circle-if-too-much {
     display: flex;
     justify-content: center;
     align-items: center;

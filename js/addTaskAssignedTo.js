@@ -79,9 +79,7 @@ function showUserList(usersElement, arrowDown, arrowUp, selectedUsers, border) {
     arrowDown.style.display = 'none';
     arrowUp.style.display = 'block';
     selectedUsers.style.display = 'none';
-    if (border) {
-        border.style.border = '1px solid #26ace3';
-    }
+    if (border) border.style.border = '1px solid #26ace3';
 }
 
 /**
@@ -98,9 +96,7 @@ function hideUserList(usersElement, arrowDown, arrowUp, selectedUsers, border) {
     arrowDown.style.display = 'block';
     arrowUp.style.display = 'none';
     selectedUsers.style.display = 'flex';
-    if (border) {
-        border.style.border = '';
-    }
+    if (border) border.style.border = '';
 }
 
 /**
@@ -148,9 +144,7 @@ function handleCheckboxChange(userId) {
 
     if (checkbox.checked) {
         userElement.classList.add("selected");
-        if (!assignedTo.includes(userId)) {
-            assignedTo.push(userId);
-        }
+        if (!assignedTo.includes(userId)) assignedTo.push(userId);
     } else {
         userElement.classList.remove("selected");
         assignedTo = assignedTo.filter(id => id !== userId);
@@ -176,9 +170,7 @@ function showAssignedUsers() {
 function renderVisibleUsers(assignedUsersElement, maxVisibleUsers) {
     assignedTo.slice(0, maxVisibleUsers).forEach(userId => {
         const user = contacts[userId];
-        if (user) {
-            assignedUsersElement.innerHTML += getAssignedUsersTemplate(user);
-        }
+        if (user) assignedUsersElement.innerHTML += getAssignedUsersTemplate(user);
     });
 }
 
@@ -189,7 +181,7 @@ function renderExtraUsersIndicator(assignedUsersElement, maxVisibleUsers) {
     if (assignedTo.length > maxVisibleUsers) {
         const extraUsersCount = assignedTo.length - maxVisibleUsers;
         assignedUsersElement.innerHTML += `
-            <div class="initials-circle-if-to-much">
+            <div class="initials-circle-if-too-much">
                 +${extraUsersCount}
             </div>
         `;

@@ -310,9 +310,8 @@ function showCategorysList(categorysElement, arrowDown, arrowUp, border) {
     categorysElement.style.display = 'block';
     arrowDown.style.display = 'none';
     arrowUp.style.display = 'block';
-    if (border) {
-        border.style.border = '1px solid #26ace3';
-    }
+
+    if (border) border.style.border = '1px solid #26ace3';
 }
 
 /**
@@ -327,9 +326,8 @@ function hideCategorysList(categorysElement, arrowDown, arrowUp, border) {
     categorysElement.style.display = 'none';
     arrowDown.style.display = 'block';
     arrowUp.style.display = 'none';
-    if (border) {
-        border.style.border = '';
-    }
+
+    if (border) border.style.border = '';
 }
 
 /**
@@ -340,16 +338,17 @@ function hideCategorysList(categorysElement, arrowDown, arrowUp, border) {
  */
 function selectCategory(event, category) {
     event.stopPropagation();
-    selectedCategory = category;
 
     const border = document.getElementsByClassName('add-task-category-input-field')[0];
-    border.style.border = '';
     const selectedCategoryElement = document.getElementById('selectedCategory');
-    selectedCategoryElement.textContent = selectedCategory;
     const categorysElement = document.getElementById('category');
-    categorysElement.style.display = 'none';
     const arrowDown = document.getElementById('categoryArrowDown');
     const arrowUp = document.getElementById('categoryArrowUp');
+
+    selectedCategory = category;
+    border.style.border = '';
+    selectedCategoryElement.textContent = selectedCategory;
+    categorysElement.style.display = 'none';
     arrowDown.style.display = 'block';
     arrowUp.style.display = 'none';
 }
